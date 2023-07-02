@@ -1,0 +1,36 @@
+@font-face{
+    font-family: Railway;
+    src: url(./fonts/Raleway-VariableFont_wght.ttf);
+}
+
+@font-face{
+    font-family: Komikax;
+    src: url(./fonts/KOMIKAX_.ttf);
+}
+
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./img/desert-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: Railway, 'Arial Narrow', Arial, sans-serif;
+}
+
+
+canvas {
+    background: black;
+}
+
+h1{
+    font-family: Komikax, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 64px;
+    color: yellow;
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
