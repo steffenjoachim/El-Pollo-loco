@@ -10,6 +10,7 @@
 
 
 body{
+    
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -25,6 +26,7 @@ body{
 
 canvas {
     background: black;
+    border-radius: 20px;
 }
 
 h1{
@@ -33,4 +35,99 @@ h1{
     color: yellow;
     margin-bottom: 32px;
     margin-top: 32px;
+}
+
+.main-div{
+    position: relative;
+    width: 720px;
+    height: 480px;
+}
+
+.game-over{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./img/9_intro_outro_screens/game_over/game\ over.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: -6px;
+    left: 0;
+    right: -6px;
+    opacity: 1;
+}
+
+.you-lost{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./img/9_intro_outro_screens/game_over/you\ lost.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: -6px;
+    left: 0;
+    right: -6px;
+    opacity: 1;
+
+}
+
+
+
+.start{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./img/9_intro_outro_screens/start/startscreen_2.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 6px;
+    bottom: -6px;
+    left: 6px;
+    right: -6px;
+    opacity: 1;
+    z-index: 99;
+}
+
+.start-botton{
+    margin-bottom: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    background: yellow;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-family: Komikax, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 32px;
+}
+
+.d-none{
+    display: none;
+}
+
+.explanations{
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.explain-button{
+    height: 32px;
+    width: 32px;
+}
+
+.button-and-text{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
 }

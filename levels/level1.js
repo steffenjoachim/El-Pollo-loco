@@ -1,10 +1,20 @@
-let level1 = new level(
+let level1;
+
+function initLevel() {
+  level1 = new Level( 
 
     [
         new Enemy(),
         new Enemy(),
         new Enemy(),
-        new Endboss(),
+        new Enemy(),
+        new Enemy(),
+        new Enemy(),
+        new Enemy(),
+        new Enemy(),
+        new Enemy(),
+        new Enemy(),
+        new Enemy(),
     ],
 
     [
@@ -29,4 +39,35 @@ let level1 = new level(
         new BackgroundObject('img/5_background/layers/1_first_layer/2.png',2157),
     ],
 
+    [
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+        new Bottle(),
+    ],
+
+    [
+        new Coins(),
+        new Coins(),
+        new Coins(),
+        new Coins(),
+        new Coins(),
+    ],
+
+    [
+        new SmallEnemy(),
+        new SmallEnemy(),
+        new SmallEnemy(),
+        new SmallEnemy(),
+        new SmallEnemy(),
+        new SmallEnemy(),
+        new SmallEnemy(),
+    ]
 )
+}

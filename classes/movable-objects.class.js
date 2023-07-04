@@ -5,6 +5,7 @@ class MovableObject extends DrawableObject{
     acceleration = 2;
     energy = 100;
     lastHit = 0;
+    endbossLives = 5;
    
     
 
@@ -26,7 +27,11 @@ class MovableObject extends DrawableObject{
         } else {
             return this.y - this.speedY < 135;
         }
+    }
+
+    isCloseToEndboss(){
         
+
     }
 
 
@@ -35,10 +40,6 @@ class MovableObject extends DrawableObject{
         let path = images[i];
         this.img = this.imageCach[path];
         this.currentImage++;
-    }
-
-    moveRight() {
-
     }
 
     moveLeft() {
@@ -67,13 +68,36 @@ class MovableObject extends DrawableObject{
         }
     }
 
+    smallHit(){
+        this.energy -= 3;
+        if (this.energy < 0) {
+            this.energy = 0;
+        } else {
+            this.lastHit = new Date().getTime();
+        }
+    }
+
+    endbossHit(){
+        this.endbossLives -= 1;
+        if (this.endbossLives < 0) {
+            this.endbossLives = 0;
+        } else {
+            this.lastHit = new Date().getTime();
+        }
+    }
+
+
     isHurt(){
         let timePassed = new Date().getTime() - this.lastHit;
     timePassed = timePassed / 1000;
-return timePassed < 1;    }
+    return timePassed < 1;    }
 
     isDead(){
         return this.energy == 0;
+    }
+
+    endbossIsDead(){
+        return this.endbossLives == 0;
     }
 
     

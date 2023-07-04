@@ -5,6 +5,9 @@ class Character extends MovableObject {
     width = 150;
     world;
     speed= 50;
+    image;
+    offset = 20;
+    pepeIsDead = false;
     
     
     IMAGES_IDLE = [
@@ -88,10 +91,11 @@ class Character extends MovableObject {
 
     animate(){
 
-        setInterval( () => {
+        let interval =setInterval( () => {
             this.walking_sound.pause();
-           
-            if (this.world.keyboard.RIGHT  && this.x < this.world.level.level_end_x) {
+            if(this.isDead()) {
+                this.pepeDead(interval);
+            } else {if (this.world.keyboard.RIGHT  && this.x < this.world.level.level_end_x) {
                 this.pepeWalkingRight();  
             } 
             if (this.world.keyboard.LEFT && this.x > 0) {
@@ -100,9 +104,7 @@ class Character extends MovableObject {
             if (this.world.keyboard.SPACE && !this.isAboveGround()) {
                 this.speedY = 25;
             }
-            if(this.isDead()) {
-                this.pepeDead();
-            } else if (this.isHurt()){
+            if (this.isHurt()){
                 this.pepeHurt();
             } else if(this.isAboveGround() || this.speedY > 0){
                 this.jump();
@@ -112,7 +114,8 @@ class Character extends MovableObject {
             // this.chicken_sound.play();
 
             // setTimeout(()=>{this.pepeSleeping();},7000);
-            }
+            } 
+          }
         }, 160);
        
     }
@@ -155,23 +158,18 @@ class Character extends MovableObject {
     }
 
     pepeDead() {
-        if (!this.isDead) { 
-          let i = this.currentImage % this.IMAGES_DEAD.length;
-          let path = this.IMAGES_DEAD[i];
-          this.img = this.imageCach[path];
-          this.currentImage++;
-      
-          if (this.currentImage === this.IMAGES_DEAD.length) {
-            this.isDead = true; 
-            this.showEndScreen();
-          }
-        }
+        let i = this.currentImage % this.IMAGES_DEAD.length;
+        let path = this.IMAGES_DEAD[i];
+        this.img = this.imageCach[path];
+        this.currentImage++;
+        for (let i = 1; i < 9999; i++) window.clearInterval(i);
+        this.showEndScreen();
       }
-
-      showEndScreen(){
-        console.log('Endscreen');
-        this.img = this.imageCach["img/9_intro_outro_screens/game_over/game over.png"];
-     } 
+    
+     showEndScreen() {
+        document.getElementById('you-lost').classList.remove('d-none')
+      }
+      
       
 
     pepeHurt(){

@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="de" translate="no">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>El Pollo Loco</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./img/2_character_pepe/1_idle/idle/I-1.png" type="image/x-icon">
-    
+
     <script src="./classes/drawable-object.class.js"></script>
     <script src="./classes/movable-objects.class.js"></script>
     <script src="./classes/character.class.js"></script>
     <script src="./classes/enemy.class.js"></script>
+    <script src="./classes/small-enemy.class.js"></script>
     <script src="./classes/cloud.class.js"></script>
     <script src="./classes/status-bar.class.js"></script>
-    <script type="module" src="./classes/bottle-status.class.js"></script>
+    <script src="./classes/bottle-status.class.js"></script>
+    <script src="./classes/coin-status.class.js"></script>
     <script src="./classes/world.class.js"></script>
     <script src="./classes/background-object.class.js"></script>
     <script src="./classes/keyboard.class.js"></script>
     <script src="./classes/level.class.js"></script>
     <script src="./classes/throwable-object.class.js"></script>
     <script src="./classes/bottle.class.js"></script>
+    <script src="./classes/coins.class.js"></script>
     <script src="./classes/endboss.class.js"></script>
     <script src="./levels/level1.js"></script>
     <script src="./js/game.js"></script>
 </head>
-<body onload="init()">
+
+<body>
 
     <h1>El Pollo Loco</h1>
+    <div class="main-div">
+        <canvas id="canvas" width="720" height="480" style="border: 6px solid black;"></canvas>
+        <div onclick="startGame()" class="start" id="start">
+            <div class="start-botton">
+                <span>Start Game</span>
+            </div>
+        </div>
+        <div onclick="startGame()" class="you-lost d-none" id="you-lost">
+            <div class="start-botton">
+                <span>New Game</span>
+            </div>
+        </div>
+        <div onclick="startGame()" class="game-over d-none" id="game-over">
+            <div class="start-botton">
+                <span>New Game</span>
+            </div>
+        </div>
+        <div class="explanations">
+            <span class="button-and-text"><img class="explain-button" src="./img/10_downloads/arrow-left.png" alt="arrow left"> Move left</span>
+            <span class="button-and-text"><img class="explain-button" src="./img/10_downloads/arrow-right.png" alt="arrow right">Move right</span>
+            <span class="button-and-text"><img class="explain-button" src="./img/10_downloads/space.png" alt="">Jump</span>
+            <span class="button-and-text"><img class="explain-button" src="./img/10_downloads/D.png" alt="D-key">Throw bottle</span>
+        </div>
+    </div>
 
-    <canvas id="canvas" width="720" height="480">
-
-
-    </canvas>
-   
-   
 </body>
+
 </html>

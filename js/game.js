@@ -10,6 +10,14 @@ function init(){
     console.log('My Character is', world.character)
 }
 
+function startGame(){
+    document.getElementById('start').classList.add('d-none');
+    document.getElementById('you-lost').classList.add('d-none');
+    document.getElementById('game-over').classList.add('d-none');
+    initLevel();
+    init();
+}
+
 window.addEventListener("keydown", (event) => {
     if (event.keyCode
         == 39) {

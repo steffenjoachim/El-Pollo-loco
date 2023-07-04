@@ -6,6 +6,7 @@ class DrawableObject {
     y = 330;
     height = 150;
     width = 150;
+    offset = 0;
 
 
 
@@ -31,7 +32,7 @@ class DrawableObject {
             ctx.beginPath();
             ctx.lineWidth = "3";
             ctx.strokeStyle = "transparent";
-            ctx.rect(this.x, this.y, this.width, this.height);
+            ctx.rect(this.x+this.offset, this.y-this.offset*0.8, this.width-this.offset*3, this.height);
             ctx.stroke();
         }
     }
